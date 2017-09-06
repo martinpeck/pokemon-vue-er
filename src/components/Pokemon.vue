@@ -1,9 +1,9 @@
-<<template>
+<template>
   <div class="pokemon">
-    <h1>{{title}}</h1>
-    <p>This is a sample app, written in Vue.js, that calls
-      the Pokemon API <a href="https://pokeapi.co" target="_blank">pokeapi.co</a></p>
-    <p>It allows you to Vue (sic) the details for a given Pokemon.</p>
+    <h2>{{title}}</h2>
+    <label for="search">Enter Pokemon ID:</label>
+    <input type="text" name="" id="search" v-model="pokemon_id">
+    <button v-on:click="search(1)">Go</button>
   </div>
 </template>
 
@@ -13,10 +13,18 @@
 
     data () {
       return {
-        title: 'Pokemon Vue-er'
+        title: 'Search',
+        pokemon_id: 1
+      }
+    },
+
+    methods: {
+      search: (id) => {
+        alert(`TODO: perform search for id=${id}!`)
       }
     }
-  }
+
+}
 
 </script>
 
