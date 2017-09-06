@@ -1,6 +1,6 @@
-# pokemon-vue-app
+# Pokemon Vue-er
 
-> A Vue.js based Pokemon search app
+> A Vue.js based Pokemon app that allows you to vue (sic) the details of a given Pokemon.
 
 ## Build Setup
 
