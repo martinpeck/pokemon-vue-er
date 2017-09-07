@@ -9,7 +9,7 @@
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src",
-    "deploy": "npm build && surge -p build --domain pokemonvue-er.surge.sh"
+    "deploy": "npm run build && surge -p dist --domain pokemonvue-er.surge.sh"
   },
   "dependencies": {
     "axios": "^0.16.2",

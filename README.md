@@ -12,6 +12,10 @@ There are a couple of useful packages being used here:
 - [vue-gh-pages](https://github.com/KieferSivitz/vue-gh-pages) is used to deploy to GitHub pages
 - [bootstrap-vue](https://bootstrap-vue.js.org/) is used to add Bootstrap 4.0beta (not that I'm using this much)
 
+A version of this app is deployed to Surge here...
+
+<pokemonvue-er.surge.sh>
+
 ## Build Setup
 
 ``` bash
