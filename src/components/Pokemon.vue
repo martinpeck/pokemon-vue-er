@@ -4,19 +4,27 @@
 
     <form v-on:submit.prevent="search">
       <label for="search">Enter Pokemon ID:</label>
-      <input type="text" name="" id="search" v-model="pokemon_id">
+      <input type="number" v-model.number="pokemon_id" placeholder="enter pokemon ID">
       <button type="submit">Go!</button>
     </form>
 
     <hr>
+    <div v-if="pokemon_details">
+      <pokemon-details v-bind:details="pokemon_details" ></pokemon-details>
+    </div>
 
-    <pokemon-details v-if="pokemon_details"></pokemon-details>
-
+    <div v-if="api_message">{{api_message}}</div>
   </div>
+
 </template>
 
 <script>
   import Detail from '@/components/Detail'
+  import axios from 'axios'
+
+  var pokemonApi = axios.create({
+    baseURL: 'https://pokeapi.co/api/v2/'
+  })
 
   export default {
     name: 'pokemon',
@@ -25,14 +33,26 @@
       return {
         title: 'Search',
         pokemon_id: 1,
-        pokemon_details: null
+        pokemon_details: null,
+        api_message: ''
       }
     },
 
     methods: {
       search: function () {
-        console.log(`TODO: perform search for id=${this.pokemon_id}!`)
-        this.pokemon_details = {name: 'foo', id: 1}
+        var vm = this
+
+        vm.api_message = 'loading data...'
+        vm.pokemon_details = null
+
+        pokemonApi.get(`pokemon/${this.pokemon_id}`)
+          .then(function (response) {
+            vm.api_message = ''
+            vm.pokemon_details = response.data
+          })
+          .catch(function (error) {
+            vm.api_message = `Failed to load Pokemon data! ${error.message}`
+          })
       }
     },
 

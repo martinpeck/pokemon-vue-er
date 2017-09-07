@@ -2,9 +2,11 @@
   <div class="pokemon_detail">
     <dl>
       <dt>Name</dt>
-      <dd>something or other</dd>
-      <dt>Something</dt>
-      <dd>blah blah blah</dd>
+      <dd>{{details.name}} ({{details.id}})</dd>
+      <dt v-if="details.height">Height</dt>
+      <dd v-if="details.height">{{details.height}}</dd>
+      <dt v-if="details.weight">Weight</dt>
+      <dd v-if="details.weight">{{details.weight}}</dd>
     </dl>
   </div>
 </template>
