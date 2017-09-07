@@ -9,13 +9,14 @@
     </form>
 
     <hr>
+
     <div v-if="pokemon_details">
       <pokemon-details v-bind:details="pokemon_details" ></pokemon-details>
     </div>
 
     <div v-if="api_message">{{api_message}}</div>
-  </div>
 
+  </div>
 </template>
 
 <script>
@@ -61,5 +62,4 @@
     }
 
 }
-
 </script>
