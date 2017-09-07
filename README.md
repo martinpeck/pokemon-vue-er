@@ -14,7 +14,7 @@ There are a couple of useful packages being used here:
 
 A version of this app is deployed to Surge here...
 
-<pokemonvue-er.surge.sh>
+<https://pokemonvue-er.surge.sh>
 
 ## Build Setup
 
