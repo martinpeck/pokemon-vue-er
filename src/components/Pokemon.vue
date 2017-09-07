@@ -1,9 +1,13 @@
 <template>
   <div class="pokemon">
     <h2>{{title}}</h2>
-    <label for="search">Enter Pokemon ID:</label>
-    <input type="text" name="" id="search" v-model="pokemon_id">
-    <button v-on:click="search(1)">Go</button>
+
+    <form v-on:submit.prevent="search">
+      <label for="search">Enter Pokemon ID:</label>
+      <input type="text" name="" id="search" v-model="pokemon_id">
+      <button type="submit">Go!</button>
+    </form>
+
   </div>
 </template>
 
@@ -19,8 +23,8 @@
     },
 
     methods: {
-      search: (id) => {
-        alert(`TODO: perform search for id=${id}!`)
+      search: function () {
+        console.log(`TODO: perform search for id=${this.pokemon_id}!`)
       }
     }
 
