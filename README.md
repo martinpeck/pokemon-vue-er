@@ -31,8 +31,16 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 
-# build and deploy to gh-pages
+# build and deploy to surge
 npm run deploy
+```
+
+## Deploying to Surge
+
+The current deploment script will attempt to deploy to `pokemonvue-er.surge.sh`. You will want to change this. You'll find the following in `package.json`, where you can change the domain:
+
+``` json
+"deploy": "npm run build && surge -p dist --domain pokemonvue-er.surge.sh"
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
