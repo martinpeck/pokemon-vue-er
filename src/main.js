@@ -3,12 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import BootstrapVue from 'bootstrap-vue'
 
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-import 'bootstrap/dist/css/bootstrap.css'
-
-Vue.use(BootstrapVue)
+// Require the main Sass manifest file
+require('./assets/sass/main.scss')
 
 Vue.config.productionTip = false
 

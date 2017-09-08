@@ -1,11 +1,26 @@
 <template>
-  <div class="pokemon">
-    <h2>{{title}}</h2>
+  <div class="box">
+    <h2 class="title">{{title}}</h2>
 
     <form v-on:submit.prevent="search">
-      <label for="search">Enter Pokemon ID:</label>
-      <input type="number" v-model.number="pokemon_id" placeholder="enter pokemon ID">
-      <button type="submit">Go!</button>
+
+      <div class="level">
+
+        <div class="level-left">
+          <div class="level-item">
+            <div>
+              <label for="search">Pokemon ID:</label>
+            </div>
+            <div class="field has-addons">
+              <div class="control">
+                <input class="input" type="number" v-model.number="pokemon_id" placeholder="enter pokemon ID">
+              </div>
+              <button type="submit" class="button is-primary">Search</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </form>
 
     <hr>
@@ -32,7 +47,7 @@
 
     data () {
       return {
-        title: 'Search',
+        title: 'Search by ID',
         pokemon_id: 1,
         pokemon_details: null,
         api_message: ''
